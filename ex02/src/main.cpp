@@ -19,6 +19,8 @@ static int atoi(std::string s)
 int main(int ac, char **av)
 {
 	clock_t c;
+	clock_t r1;
+	clock_t r2;
 	if (ac < 2)
 	{
 		std::cerr << "Error: Input not enough" << std::endl;
@@ -38,13 +40,20 @@ int main(int ac, char **av)
 
 	c = clock();
 	PmergeMe::sortVector(vecInt);
-	c = clock() - c;
+	r1 = clock() - c;
+	c = clock();
+	PmergeMe::sortDeque(deqInt);
+	r2 = clock() - c;
 
 	std::cout << "after: ";
 	for (int i = 1; i < ac; i++)
 		std::cout << vecInt[i - 1] << " ";
 	std::cout << std::endl;
-	std::cout << (float)c / CLOCKS_PER_SEC << std::endl;
+
+	std::cout << "time taken for std::vector: "
+			  << (float)r1 / CLOCKS_PER_SEC * 1000 << "ms" << std::endl;
+	std::cout << "time taken for std::deque: "
+			  << (float)r2 / CLOCKS_PER_SEC * 1000 << "ms" << std::endl;
 
 	return 0;
 }
