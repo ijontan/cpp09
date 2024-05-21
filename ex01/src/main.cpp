@@ -6,7 +6,7 @@ int main(int ac, char **av)
 {
 	if (ac != 2)
 	{
-		std::cerr << "Error: wrong amount of args"<< std::endl;
+		std::cerr << "Error: wrong amount of args" << std::endl;
 		return 1;
 	}
 	try
@@ -16,6 +16,7 @@ int main(int ac, char **av)
 	catch (std::exception &e)
 	{
 		std::cerr << e.what() << std::endl;
+		return 1;
 	}
 	return 0;
 }

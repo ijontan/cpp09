@@ -21,7 +21,7 @@ public:
 			return _str.c_str();
 		}
 	};
-	static std::stack<float> _numberStack;
 
 private:
+	static std::stack<float> _numberStack;
 };
