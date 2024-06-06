@@ -3,9 +3,15 @@
 #include <exception>
 #include <stack>
 #include <string>
+
 class RPN
 {
 public:
+	RPN(void);
+	~RPN(void);
+	RPN(const RPN &src);
+	RPN	&operator=(const RPN &rhs);
+
 	static float calculate(std::string str);
 
 	class Error : public std::exception

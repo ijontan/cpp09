@@ -10,6 +10,33 @@
 int PmergeMe::straggler = 0;
 bool PmergeMe::is_odd = false;
 
+/***********************************
+ * Constructors
+ ***********************************/
+
+PmergeMe::PmergeMe(void)
+{
+}
+
+PmergeMe::PmergeMe(const PmergeMe &src)
+{
+	(void)src;
+}
+
+PmergeMe &PmergeMe::operator=(const PmergeMe &rhs)
+{
+	(void)rhs;
+	return *this;
+}
+
+/***********************************
+ * Destructors
+ ***********************************/
+
+PmergeMe::~PmergeMe(void)
+{
+}
+
 int PmergeMe::jacobsthal(int n)
 {
 	if (n == 0)

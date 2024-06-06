@@ -6,6 +6,33 @@
 
 std::stack<float> RPN::_numberStack;
 
+/***********************************
+ * Constructors
+ ***********************************/
+
+RPN::RPN(void)
+{
+}
+
+RPN::RPN(const RPN &src)
+{
+	(void)src;
+}
+
+RPN &RPN::operator=(const RPN &rhs)
+{
+	(void)rhs;
+	return *this;
+}
+
+/***********************************
+ * Destructors
+ ***********************************/
+
+RPN::~RPN(void)
+{
+}
+
 static float ft_atof(std::string s)
 {
 	std::stringstream ss(s);

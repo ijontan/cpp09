@@ -7,9 +7,15 @@
 #include <string>
 #include <utility>
 #include <vector>
+
 class PmergeMe
 {
 public:
+	PmergeMe(void);
+	~PmergeMe(void);
+	PmergeMe(const PmergeMe &src);
+	PmergeMe	&operator=(const PmergeMe &rhs);
+
 	typedef std::pair<int, int> PairInt;
 	static int jacobsthal(int n);
 	static std::list<int> buildInsertionSequence(int size);
