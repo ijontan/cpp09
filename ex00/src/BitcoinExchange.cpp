@@ -81,7 +81,7 @@ static int getDay(string date)
 	return toIntRepresent(ymd[0], ymd[1], ymd[2]);
 }
 
-static double stod(string str)
+static double ft_stod(string str)
 {
 	std::stringstream ss(str);
 	double value;
@@ -110,7 +110,7 @@ void BitcoinExchange::parse(string fname)
 				continue;
 			std::pair<string, string> vpair = splitPair(str, " | ");
 			int dateInt = getDay(vpair.first);
-			double value = stod(vpair.second);
+			double value = ft_stod(vpair.second);
 			validValue(value);
 			map<int, double>::iterator it = _map.upper_bound(dateInt);
 			if (it != _map.begin())
@@ -139,7 +139,7 @@ void BitcoinExchange::loadExchangeRate(string fname)
 		{
 			std::pair<string, string> vpair = splitPair(str, ",");
 			std::pair<int, double> newPair =
-				std::make_pair(getDay(vpair.first), stod(vpair.second));
+				std::make_pair(getDay(vpair.first), ft_stod(vpair.second));
 			if (_map.find(newPair.first) != _map.end())
 				throw Error("Error: repeated value");
 			_map.insert(newPair);

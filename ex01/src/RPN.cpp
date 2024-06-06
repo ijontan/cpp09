@@ -6,7 +6,7 @@
 
 std::stack<float> RPN::_numberStack;
 
-static float atof(std::string s)
+static float ft_atof(std::string s)
 {
 	std::stringstream ss(s);
 	float ret;
@@ -51,7 +51,7 @@ float RPN::calculate(std::string str)
 			_numberStack.push(newVal);
 		}
 		else if (s[0] >= '0' && s[0] <= '9')
-			_numberStack.push(atof(s));
+			_numberStack.push(ft_atof(s));
 		else
 			throw Error("Error: invilid char");
 	}
