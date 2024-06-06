@@ -8,7 +8,7 @@
 #include <string>
 #include <vector>
 
-static int atoi(std::string s)
+static int ft_atoi(std::string s)
 {
 	std::stringstream ss(s);
 	int ret;
@@ -31,7 +31,7 @@ int main(int ac, char **av)
 	std::cout << "before: ";
 	for (int i = 1; i < ac; i++)
 	{
-		int value = atoi(av[i]);
+		int value = ft_atoi(av[i]);
 		vecInt[i - 1] = value;
 		deqInt[i - 1] = value;
 		std::cout << vecInt[i - 1] << " ";
